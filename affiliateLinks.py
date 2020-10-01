@@ -32,6 +32,10 @@ def getAllData(link2):
     product_title = browser.find_element_by_id('productTitle')
     lis2.append(product_title.text)
 
+    #       PRODUCT DESCRIPTION
+    product_desc = browser.find_element_by_class_name('a-unordered-list a-vertical a-spacing-mini')
+    lis2.append(product_desc)
+
     return lis2
 
 
@@ -65,6 +69,6 @@ for index, row in links_df.iterrows():
 for link in lis:
     lis3.append(getAllData(link))
 
-links_df2 = pd.DataFrame(lis3, columns=['url','image','title'])
+links_df2 = pd.DataFrame(lis3, columns=['url','image','title','description'])
 
 links_df2.to_csv('output2.csv')

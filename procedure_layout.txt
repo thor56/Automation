@@ -1,0 +1,39 @@
+https://app.affiliatable.io/dashboard
+
+
+https://app.affiliatable.io/posts
+
+box-tools pull-right
+
+
+value name ="post_title"
+
+
+name = "template_style"
+	option value = "table1"
+	
+	
+class = "btn btn-theme"    text = "Save"
+
+
+
+LOOP:
+
+
+	class="btn btn-theme btn-xs add-product-box cboxElement"    text="Add Product"
+
+	title
+	
+	link
+	
+	class="tox-icon tox-tbtn__icon-wrap"
+	
+	id="features_ifr"	class="tox-edit-area"    
+	
+	image1
+	
+	class="btn btn-theme"	text= "Save"
+
+
+
+

@@ -43,12 +43,12 @@ def getAllData(link2):
 
     return lis2
 
-
+# Using an existing Chrome session
 chrome_options = Options()
 chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
 
-# Change chrome driver path accordingly
-chrome_driver = "E:\PROJECTS\Automation\chromedriver.exe"
+#       Change chrome driver path accordingly
+chrome_driver = "D:\PROJECT\Automation\chromedriver.exe"
 browser = webdriver.Chrome(chrome_driver, options=chrome_options)
 
 # # First Part Associate Sign in

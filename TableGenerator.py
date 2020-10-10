@@ -3,6 +3,7 @@ from selenium.webdriver.chrome.options import Options
 import time
 import pandas as pd
 import re
+import clipboard
 
 
 link = "https://startblogging.co/affiliate-product-table-generator"
@@ -42,4 +43,16 @@ for index, row in data_df.iterrows():
     InsertRow(row.title,row.url,row.image,row.description,count)
     count = count + 1
     time.sleep(2)
+
+# adjusting the final table
+browser.find_element_by_xpath('/html/body/div/div/div/div/main/div/div/div[1]/div/div/div[2]/div[1]/div[' + str(count + 1) + ']/div/div[2]/button').click()
+# Fetching final table code
+browser.find_element_by_xpath('/html/body/div/div/div/div[1]/main/div/div/div[1]/div/div/div[2]/div[2]/button[1]/span').click()
+browser.find_element_by_xpath('/html/body/div/div/div/div[3]/div/div/div[2]/button[1]/span').click()
+
+# storing the final table into a file
+outFileName="final.txt"
+outFile=open(outFileName, "w")
+outFile.write(clipboard.paste())
+outFile.close()
 

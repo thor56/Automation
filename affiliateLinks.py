@@ -84,3 +84,4 @@ for link in lis:
 links_df2 = pd.DataFrame(lis3, columns=['url','image','title','description'])
 
 links_df2.to_csv('TableInput.csv')
+

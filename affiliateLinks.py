@@ -1,3 +1,4 @@
+import clipboard
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import time
@@ -6,6 +7,9 @@ import pandas as pd
 # browser = webdriver.Chrome()
 
 link1 = 'https://affiliate-program.amazon.com/home'
+
+bullets = []
+
 
 def getAllData(link2):
     lis2 = []
@@ -40,8 +44,20 @@ def getAllData(link2):
         text = item.text
         desc_bullets.append(text)
     lis2.append(desc_bullets)
+    bullets.append(desc_bullets)
 
     return lis2
+
+
+def orderDescription(bullets):
+    base_code = ''
+    for desc in bullets:
+        base_code = base_code + '<div class="cg-tbl-ul"><ul>'
+        for bullet in desc:
+            base_code = base_code + '<li>' + bullet + '</li>'
+        base_code = base_code + '</ul></div>'
+    return base_code
+
 
 # Using an existing Chrome session
 chrome_options = Options()
@@ -85,3 +101,8 @@ links_df2 = pd.DataFrame(lis3, columns=['url','image','title','description'])
 
 links_df2.to_csv('TableInput.csv')
 
+# storing the description as bullets into a file
+outFileName="bullets.txt"
+outFile=open(outFileName, "w")
+outFile.write(orderDescription(bullets))
+outFile.close()

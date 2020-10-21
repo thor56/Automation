@@ -67,21 +67,6 @@ chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
 chrome_driver = "D:\PROJECT\Automation\chromedriver.exe"
 browser = webdriver.Chrome(chrome_driver, options=chrome_options)
 
-# # First Part Associate Sign in
-# browser.get(link1)
-# # u_name = browser.find_element_by_id('ap_email')
-# # u_name.send_keys('tcfutube@gmail.com')
-# # pass_wd = browser.find_element_by_id('ap_password')
-# # pass_wd.send_keys('9441813435@rk')
-# # button = browser.find_element_by_id('signInSubmit')
-# #
-# # button.click()
-# # time.sleep(5)
-
-# Second part  --- Scrapping
-
-# browser.execute_script("window.open('');")
-# browser.switch_to.window(browser.window_handles[1])
 
 #       READING THE LINKS FROM EXCEL SHEET
 

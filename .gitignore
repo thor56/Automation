@@ -1,1 +1,7 @@
 chromedriver_win32.zip
+.idea/
+geckodriver-0.27.0/
+geckodriver-v0.27.0-win64/
+geckodriver.log
+test.py
+venv/

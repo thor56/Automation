@@ -29,7 +29,7 @@ def InsertRow(title,url,image,description,count):
 #       Change chrome driver path accordingly
 # chrome_driver = "D:\PROJECT\Automation\chromedriver.exe"
 # browser = webdriver.Chrome(chrome_driver, options=chrome_options)
-firefox_Driver = "D:\PROJECT\Automation\geckodriver-v0.27.0-win64"
+firefox_Driver = "E:\PROJECTS\Automation"
 browser = webdriver.Firefox(firefox_Driver)
 
 
